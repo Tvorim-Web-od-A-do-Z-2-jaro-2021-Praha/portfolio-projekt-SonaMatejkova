@@ -1,3 +1,68 @@
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  color: white;
+  background-color: black;
+}
+.header__title {
+  text-decoration: none;
+  color: white;
+  font-family: 'Caveat', cursive;
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+.navigation {
+  display: flex;
+}
+.navigation__item {
+  list-style: none;
+  font-size: 1.5em;
+  margin: 0 1em;
+  padding-top: 0.2em;
+}
+.navigation__item a {
+  text-decoration: none;
+  color: white;
+}
+section {
+  margin: 2em;
+  padding: 2em;
+  background-color: yellow;
+}
+.work, .skills, .about {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.about__item, .skills__item, .work__item {
+  width: 33.3%;
+  padding: 2em;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px 20px 0 0;
+  margin-top: -1em;
+}
+.work__item img {
+  width: 100%;
+}
+.contact {
+  display: flex;
+  justify-content: space-around;
+}
+.contact__item {
+  list-style: none;
+  width: 2em;
+}
+.attribution {
+  margin: 1em 5em;
+  text-align: right;
+}

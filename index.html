@@ -5,11 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="header">
-    <div class="header__title">Portfolio</div>
+    <a class="header__title" href="#">Portfolio</a>
     <nav class="navigation">
       <li class="navigation__item">
         <a href="#about">O mně</a>
@@ -25,7 +27,9 @@
       </li>
     </nav>
   </header>
+  <h1 class="about__title">O mně</h1>
   <section id="about" class="about">
+    
     <div class="about__item">Kreativita a přesnost s citem pro detail</div>
     <div class="about__item">Estetika s funkčností</div>
     <div class="about__item">Samostatnost s týmovou spoluprací</div>
@@ -33,14 +37,17 @@
     <div class="about__item">Efektivní plánování času s produktivitou</div>
     <div class="about__item">Schopnost učit se nové věci s využitím dosavadních zkušeností</div>
   </section>
+  <h1 class="skills__title">Dovednosti</h1>
   <section id="skills" class="skills">
+    
     <div class="skills__item">HTML5/CSS3</div>
     <div class="skills__item">Saas</div>
     <div class="skills__item">Bootstrap</div>
-    <div class="skills__item">Javascript</div>
+    <div class="skills__item">JavaScript</div>
     <div class="skills__item">React</div>
     <div class="skills__item">Inkscape</div>
   </section>
+  <h1 class="work__title">Práce</h1>
   <section id="work" class="work">
     <div class="work__item">
       <a href="https://projekt-mensch-sona.netlify.app/">
@@ -73,17 +80,18 @@
       </a>
     </div>
   </section>
-  <footer id="contact"class="contact">
+  <footer id="contact" class="contact">
     <li class="contact__item">
-      <a href="https://github.com/SonaMatejkova"></a>
+      <a href="https://github.com/SonaMatejkova"><img src="images/github.svg" alt="github"></a>
     </li>
     <li class="contact__item">
-      <a href="https://www.linkedin.com/in/sona-matejkova/"></a>
+      <a href="https://www.linkedin.com/in/sona-matejkova/"><img src="images/linkedin.svg" alt="linkedin"></a>
     </li>
     <li class="contact__item">
-      <a href="mailto:mat.sona@post.cz">email</a>
+      <a href="mailto:mat.sona@post.cz"><img src="images/email.svg" alt="email"></a>
     </li>
     <p class="contact__copy">© 2021, Soňa Matějková</p>
   </footer>
+  <div class="attribution">Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </body>
 </html>
