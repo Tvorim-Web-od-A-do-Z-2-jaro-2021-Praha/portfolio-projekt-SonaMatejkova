@@ -4,65 +4,282 @@ html { box-sizing: border-box; }
 body {
   min-height: 100%;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgb(18, 78, 116);
+  background-image: url(images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .header {
+  margin:0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 1em;
-  color: white;
-  background-color: black;
+  color: rgb(254, 252, 236);
+  background-color: rgba(26, 161, 216, 0.8);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 .header__title {
   text-decoration: none;
-  color: white;
+  color: rgb(254, 252, 236);
   font-family: 'Caveat', cursive;
   font-size: 2.5em;
   text-transform: uppercase;
+  margin-left: 1em;
 }
 .navigation {
   display: flex;
 }
 .navigation__item {
   list-style: none;
-  font-size: 1.5em;
-  margin: 0 1em;
-  padding-top: 0.2em;
+  font-size: 1.2em;
+  margin: 0 0.4em;
+  padding-top: 0.9em;
 }
 .navigation__item a {
   text-decoration: none;
-  color: white;
+  color: rgb(254, 252, 236);
+  padding: 1em;
 }
-section {
-  margin: 2em;
-  padding: 2em;
-  background-color: yellow;
+.navigation__item a:hover, .navigation__item a:active {
+  background-color: rgb(254, 252, 236);
+  color: rgb(26, 161, 216);
 }
-.work, .skills, .about {
-  display: flex;
-  flex-wrap: wrap;
-
+.title {
+  font-size: 1.5em;
+  color: rgb(254, 252, 236);
+  text-align: center;
+  margin-top: 5em;
 }
-.about__item, .skills__item, .work__item {
-  width: 33.3%;
-  padding: 2em;
-  background-color: white;
-  border: 1px solid black;
+.title__text {
+  margin: 0;
+}
+.title__name {
+  margin: 0.5em;         
+}
+.about-title, .skills-title, .work-title {
+  width: 300px;
+  font-family: 'Caveat', cursive;
+  font-size: 2.5em;
+  text-align: center;
+  color: rgb(26, 161, 216);
+  margin: 0 auto;
+  margin-bottom: 2px;
+  background-color: rgb(254, 252, 236);
   border-radius: 20px 20px 0 0;
-  margin-top: -1em;
+  border-top: 1px solid rgba(209, 206, 206, 0.7);
 }
-.work__item img {
+.about-title--left {
+  margin-left: 1em;
+}
+.work-title--right {
+  margin-right: 1em;
+}
+h3 {
+  margin: 0.1em 0 0 0;
+  font-size: 1.2em;
+}
+.about, .skills, .work {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.placeholder {
+  height: 4.5rem;
+}
+.work-container, .skills-container, .about-container {
+  min-height: 600px;
+  background-color: rgb(254, 252, 236);
+  border-radius: 20px 20px 0 0;
+  border: 1px solid rgba(209, 206, 206, 0.7);
+  box-shadow: 3px 4px 5px rgba(209, 206, 206, 0.7);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 3em;
+  column-gap: 3em;
+  padding: 3em;
+}
+.about-container__item, .skills-container__item, .work-container__item {
+  padding: 2.5em;
+  border-radius: 5px;
+  border: 1px solid rgba(209, 206, 206, 0.5);
+  box-shadow: 3px 4px 5px rgba(209, 206, 206, 0.6);
+}
+.work-container__item {
+  padding: 1.5em;
+}
+.work-container__item img {
   width: 100%;
+  border: 3px solid  rgb(53, 52, 52);
+}
+.work-container a {
+  text-decoration: none;
+  color:rgb(18, 78, 116)
+}
+.about-container__item--first, .skills-container__item--first, .work-container__item--first {
+  background-color: rgb(253, 222, 134);
+}
+.about-container__item--second, .skills-container__item--second, .work-container__item--second {
+  background-color: rgb(253, 216, 114);
+}
+.about-container__item--third, .skills-container__item--third, .work-container__item--third {
+  background-color: rgb(254, 182, 133);
 }
 .contact {
+  max-width: 900px;
+  margin:0 auto;
   display: flex;
   justify-content: space-around;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1em 0 0 0;
 }
-.contact__item {
+.contact-container {
+  display: flex;
+}
+.contact-container__item {
   list-style: none;
-  width: 2em;
+  width: 3em;
+  margin: 0 1em;
+}
+.contact-container__item img {
+  filter: invert(100%);
+}
+.contact__copy {
+  margin-top: 0.5em;
 }
 .attribution {
-  margin: 1em 5em;
-  text-align: right;
+  max-width: 900px;
+  margin:0 auto;
+  padding: 0;
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.attribution a {
+  color: rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 12px;
+  }
+  .header {
+    display: block;
+  }
+  .header__title {
+    font-size: 2em;
+    position: absolute;
+    top: 1.5em;
+    margin-left: 0.3em;
+  }
+  .navigation {
+    justify-content: center;
+  }
+  .navigation__item {
+    font-size: 1.1em;
+    padding: 0.6em 0;
+  }
+  .navigation__item a {
+    padding: 0.7em;
+  }
+  .title {
+    font-size: 1em;
+    margin-top: 6em;
+  }
+  .title__name {
+    margin: 0;
+  }
+  .about-title, .skills-title, .work-title {
+    width: 150px;
+    font-size: 1.8em;
+  }
+  .about-title--left, .work-title--right {
+    margin-left: auto;
+    margin-right:auto;
+  } 
+  .about, .skills, .work {
+    max-width: 300px;
+  }
+  .work-container, .skills-container, .about-container {
+    display: block;
+    padding: 3em;
+  }
+  .placeholder {
+    height: 2.2rem;
+  }
+  .about-container__item, .skills-container__item, .work-container__item {
+    padding: 1.5em;
+    min-height: 100px;
+    margin: 5px 0;
+  }
+  .skills-container__item p {
+    margin: 0;
+  }
+  .contact {
+    max-width: 300px;
+    font-size: 0.8em;
+  }
+  .attribution {
+    max-width: 300px;
+    font-size: 0.7em;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 850px) {
+  body {
+    font-size: 16px;
+  }
+  .header__title {
+    font-size: 1.8em;
+  }
+  .navigation__item {
+    font-size: 1em;
+    padding: 0.7em 0;
+  }
+  .navigation__item a {
+    padding: 0.8em;
+  }
+  .title {
+    font-size: 1.4em;
+    margin-top: 3em;
+  }
+  .title__name {
+    margin: 0;
+  }
+  .about-title, .skills-title, .work-title {
+    width: 200px;
+    font-size: 2em;
+  }
+  .about, .skills, .work {
+    min-width: 400px;
+    width: 600px;
+  }
+  .work-container, .skills-container, .about-container {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2.5em;
+    column-gap: 2.5em;
+    padding: 2.5em;
+  }
+  .placeholder {
+    height: 3rem;
+  }
+  .about-container__item, .skills-container__item, .work-container__item {
+    padding: 2.5em;
+    min-height: 220px;
+  }
+  .work-container__item {
+    padding:  1.5em;
+  }
+  .contact {
+    max-width: 600px;
+    font-size: 0.9em;
+  }
+  .attribution {
+    max-width: 600px;
+    font-size: 0.6em;
+  }
 }
