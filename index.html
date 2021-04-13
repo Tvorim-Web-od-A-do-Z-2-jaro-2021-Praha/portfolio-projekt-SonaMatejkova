@@ -4,9 +4,142 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tvořím web úkol</title>
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Nadpis testovací</h1>
+  <header class="header">
+    <a class="header__title" href="#">Portfolio</a>
+    <nav class="navigation">
+      <li class="navigation__item">
+        <a href="#about">Profil</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#skills">Dovednosti</a
+        </li>
+      <li class="navigation__item">
+        <a href="#work">Práce</a>
+      </li>
+      <li class="navigation__item">
+        <a href="#contact">Kontakt</a>
+      </li>
+    </nav>
+  </header>
+
+  <div class="title">
+    <h1 class="title__name">Soňa Matějková</h1>
+    <p class="title__text">Front-end Developer</p>
+  </div>
+
+  <div id="about" class="placeholder"></div>
+  
+  <section  class="about">
+    <h2 class="about-title about-title--left">Profil</h2>
+    <div class="about-container">
+      <div class="about-container__item about-container__item--third">Spojení kreativity s přesností a citem pro detail</div>
+      <div class="about-container__item about-container__item--second">Důraz na funkčnost bez opomenutí přitažlivého vzhledu</div>
+      <div class="about-container__item about-container__item--first">Samostatná práce i týmová spolupráce</div>
+      <div class="about-container__item about-container__item--second">Používání ověřených postupů i hledání nových řešení</div>
+      <div class="about-container__item about-container__item--first">Efektivní plánování času pro lepší produktivitu</div>
+      <div class="about-container__item about-container__item--third">Schopnost učit se nové věci s využitím dosavadních zkušeností</div>
+    </div>
+  </section>
+
+  <div id="skills" class="placeholder"></div>
+
+  <section  class="skills">
+    <h2 class="skills-title skills-title--medium">Dovednosti</h2>
+    <div class="skills-container">  
+      <div class="skills-container__item skills-container__item--second">
+        <h3>HTML5/CSS3</h3>
+        <p>responsivní webdesign, grid, flexbox, BEM</p>
+      </div>
+      <div class="skills-container__item skills-container__item--first">
+        <h3>Saas</h3>
+        <p>variables, functions, nesting, mixins</p>
+      </div>
+      <div class="skills-container__item skills-container__item--third">
+        <h3>Bootstrap</h3>
+        <p>verze 4.0</p>
+      </div>
+      <div class="skills-container__item skills-container__item--third">
+        <h3>JavaScript</h3>
+        <p>ES6, animace SVG</p>
+      </div>
+      <div class="skills-container__item skills-container__item--second">
+        <h3>React</h3>
+        <p>React Router, Hooks, Styled Components</p>
+      </div>
+      <div class="skills-container__item skills-container__item--first">
+        <h3>Inkscape</h3>
+        <p>tvorba vektorové grafiky</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="work" class="placeholder"></div>
+
+  <section  class="work">
+    <h2 class="work-title work-title--right">Práce</h2>
+    <div class="work-container">
+      <div class="work-container__item work-container__item--first">
+        <a href="https://projekt-mensch-sona.netlify.app/" target="blanc">
+          <img src="images/Mensch.png" alt="hra">
+          <h3>Mensch, nezlob se</h3>
+        </a>
+      </div>
+      <div class="work-container__item work-container__item--third">
+        <a href="https://sonamatejkova.github.io/Packman-Czechitas/" target="blanc">
+          <img src="images/Packman.png" alt="packman">
+          <h3>Packman</h3>
+        </a>
+      </div>
+      <div class="work-container__item work-container__item--second">
+        <a href="https://sonamatejkova.github.io/piskvorky/" target="blanc">
+          <img src="images/Piskvorky.png" alt="piskvorky">
+          <h3>Piškvorky</h3>
+        </a>
+      </div>
+      <div class="work-container__item work-container__item--third">
+        <a href="https://sonamatejkova.github.io/Island/" target="blanc">
+          <img src="images/Island.png" alt="island">
+          <h3>Island</h3>
+        </a>
+      </div>
+      <div class="work-container__item work-container__item--second">
+        <a href="https://sonamatejkova.github.io/Kadernictvi--Bootstrap/" target="blanc">
+          <img src="images/Kadernictvi.png" alt="kadernictvi">
+          <h3>Kadeřnictví</h3>
+        </a>
+      </div>
+      <div class="work-container__item work-container__item--first">
+        <a href="https://cafelora-sona.netlify.app/" target="blanc">
+          <img src="images/CafeLora.png" alt="cafe">
+          <h3>Cafe Lora</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="contact">
+    <div class="contact-container">
+      <li class="contact-container__item">
+        <a href="https://github.com/SonaMatejkova"><img src="images/github.svg" alt="github"></a>
+      </li>
+      <li class="contact-container__item">
+        <a href="https://www.linkedin.com/in/sona-matejkova/"><img src="images/linkedin.svg" alt="linkedin"></a>
+      </li>
+      <li class="contact-container__item">
+        <a href="mailto:mat.sona@post.cz"><img src="images/email.svg" alt="email"></a>
+      </li>
+    </div>
+    <p class="contact__copy">© 2021, Soňa Matějková</p>
+  </footer>
+
+  <div class="attribution">Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+  <a href='https://www.freepik.com/vectors/background'> Background vector created by kjpargeter - www.freepik.com</a>  
+  </div>
 </body>
 </html>
