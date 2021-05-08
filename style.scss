@@ -1,0 +1,492 @@
+// variables
+$backgroundImage: url(images/background.jpg);
+$sectionBackgroundColor: #fefcec;
+$headerBackgroundColor: rgba(26, 161, 216, 0.8);
+$itemBackgroundColorLight: #fdde86;
+$itemBackgroundColorMedium: #fdd872;
+$itemBackgroundColorDark: #feb685;
+$footerBackgroundColor: rgba(0, 0, 0, 0.2);
+$mainColor: #124e74;
+$sectionTitleColor: #1aa1d8;
+$headerColor: #fefcec;
+$contactColor: #ffffff;
+$atributionColor: rgba(255, 255, 255, 0.5);
+$fontFamilyMain: 'Montserrat', sans-serif;
+$fontFamilyTitle: 'Caveat', cursive;
+$boxShadow: 3px 4px 5px rgba(209, 206, 206, 0.7);
+
+//mixins
+@mixin sectionTitle (){
+  width: 300px;
+  font: {
+    family: $fontFamilyTitle;
+    size: 2.5em;
+  }
+  text-align: center;
+  color: $sectionTitleColor;
+  margin: 0 auto;
+  margin-bottom: 2px;
+  background-color: $sectionBackgroundColor;
+  border-radius: 20px 20px 0 0;
+  border-top: 1px solid rgba(209, 206, 206, 0.7);
+}
+
+@mixin sectionContainer (){
+  min-height: 600px;
+  background-color: $sectionBackgroundColor;
+  border-radius: 20px 20px 0 0;
+  border: 1px solid rgba(209, 206, 206, 0.7);
+  box-shadow: $boxShadow;
+  display: grid;
+  padding: 2em 3em;
+  column-gap: 3em;
+}
+
+
+@mixin sectionContainerItem (){
+  min-height: 11em;
+  padding: 2.5em;
+  border-radius: 5px;
+  border: 1px solid rgba(209, 206, 206, 0.5);
+  box-shadow: $boxShadow;
+  align-self: center;
+}
+
+@mixin grid ($columns: repeat(3, minmax(14em, 1fr)), $rows: repeat(3, minmax(14em, 1fr))) {
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+}
+
+@mixin gridResponsive ($columns: repeat(2, minmax(15em, 1fr)), $rows: repeat(4, minmax(10em, 1fr)), $gap: 2.5em){
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  column-gap: $gap;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font: {
+    family: $fontFamilyMain;
+    size: 16px;
+  }
+  line-height: 1.7;
+  color: $mainColor;
+  background: {
+    image: $backgroundImage;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
+.header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: $headerColor;
+  background-color: $headerBackgroundColor;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  &__title {
+    text: {
+      decoration: none;
+      transform: uppercase;
+    }
+    font: {
+      family: $fontFamilyTitle;
+      size: 2.5em;
+    }
+    color: $headerColor;
+    margin-left: 1em;
+  }
+}
+
+.navigation {
+  display: flex;
+  &__item {
+    list-style: none;
+    font-size: 1.2em;
+    margin: 0 0.4em;
+    padding-top: 0.9em;
+    & a {
+      text-decoration: none;
+      color: $headerColor;
+      padding: 1em;
+    }
+    & a:hover,
+    & a:active {
+      background-color: $headerColor;
+      color: $sectionTitleColor;
+    }
+  }
+}
+
+.title {
+  font-size: 1.5em;
+  color: $headerColor;
+  text-align: center;
+  margin-top: 5em;
+  &__text {
+    margin: 0;
+  }
+  &__name {
+    margin: 0.5em;
+  }
+}
+
+.about-title {
+  &--left {
+    margin-left: 1em;
+  }
+  @include sectionTitle();
+}
+
+.skills-title {
+  @include sectionTitle();
+}
+
+.work-title {
+  &--right {
+    margin-right: 1em;
+  }
+  @include sectionTitle();
+}
+
+h3 {
+  margin: 0.1em 0 0 0;
+  font-size: 1.2em;
+}
+
+.about,
+.skills,
+.work {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.placeholder {
+  height: 4.5rem;
+}
+
+.about-container {
+  @include sectionContainer();
+  @include grid();
+  &__item {
+    @include sectionContainerItem();
+  }
+}
+
+.skills-container {
+  @include sectionContainer();
+  @include grid();
+  &__item {
+    @include sectionContainerItem();
+  }
+}
+
+.work-container {
+  @include sectionContainer();
+  @include grid(repeat(3, minmax(15em, 1fr)), repeat(2, minmax(20em, 1fr)));
+  padding: 3em;
+  gap: 2em;
+  &__item {
+    @include sectionContainerItem();
+    padding: 1.5em;
+    min-height: 15em;
+  }
+  &__item img {
+    width: 100%;
+    border: 3px solid rgb(53, 52, 52);
+    margin-bottom: 1em;
+  }
+  & a {
+    text-decoration: none;
+    color: $mainColor;
+  }
+}
+
+.about-container__item {
+  &--first {
+    background-color: $itemBackgroundColorLight;
+    grid-area: 1/1/3/2;
+  }
+  &--second {
+    background-color: $itemBackgroundColorMedium;
+    grid-area: 2/2/3/3;
+  }
+  &--third {
+    background-color: $itemBackgroundColorDark;
+    grid-area: 1/2/2/4;
+  }
+  &--fourth {
+    background-color: $itemBackgroundColorLight;
+    grid-area: 2/3/3/4;
+  }
+  &--fifth {
+    background-color: $itemBackgroundColorMedium;
+    grid-area: 3/1/4/2;
+  }
+  &--sixth {
+    background-color: $itemBackgroundColorDark;
+    grid-area: 3/2/4/4;
+  }
+}
+
+.skills-container__item {
+  &--first {
+  background-color: $itemBackgroundColorLight;
+  grid-area: 1/3/3/4;
+}
+  &--second {
+    background-color: $itemBackgroundColorMedium;
+    grid-area: 1/1/2/3;
+  }
+  &--third {
+    background-color: $itemBackgroundColorDark;
+    grid-area: 2/2/3/3;
+  }
+  &--fourth {
+    background-color: $itemBackgroundColorLight;
+    grid-area: 2/1/3/2;
+  }
+  &--fifth {
+    background-color: $itemBackgroundColorMedium;
+    grid-area: 3/2/4/4;
+  }
+  &--sixth {
+    background-color: $itemBackgroundColorDark;
+    grid-area: 3/1/4/2;
+  }
+}
+
+.work-container__item {
+  &--first {
+    background-color: $itemBackgroundColorLight;
+    align-self: start;
+  }
+  &--second {
+    background-color: $itemBackgroundColorMedium;
+  }
+  &--third {
+    background-color: $itemBackgroundColorDark;
+    align-self: end;
+  }
+}
+
+.contact {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  color: $contactColor;
+  background-color: $footerBackgroundColor;
+  padding: 1em 0 0 0;
+  &__copy {
+    margin-top: 0.5em;
+  }
+  &-container {
+    display: flex;
+    &__item {
+      list-style: none;
+      width: 3em;
+      margin: 0 1em;
+    }
+    &__item img {
+      filter: invert(100%);
+    }
+  }
+}
+
+.attribution {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 0.8em;
+  color: $atributionColor;
+  background-color: $footerBackgroundColor;
+  text-align: center;
+  & a {
+    color: $atributionColor;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 12px;
+  }
+  .header {
+    display: block;
+    &__title {
+      font-size: 2em;
+      position: absolute;
+      top: 1.5em;
+      margin-left: 0.3em;
+    }
+  }
+
+  .navigation {
+    justify-content: center;
+    &__item {
+      font-size: 1.1em;
+      padding: 0.6em 0;
+    }
+    &__item a {
+      padding: 0.7em;
+    }
+  }
+
+  .title {
+    font-size: 1em;
+    margin-top: 6em;
+    &__name {
+      margin: 0;
+    }
+  }
+
+  .about-title,
+  .skills-title,
+  .work-title {
+    width: 150px;
+    font-size: 1.8em;
+  }
+  .about-title--left,
+  .work-title--right {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about,
+  .skills,
+  .work {
+    max-width: 300px;
+  }
+  .work-container,
+  .skills-container,
+  .about-container {
+    display: block;
+    padding: 3em;
+  }
+  .placeholder {
+    height: 2.2rem;
+  }
+  .about-container__item,
+  .skills-container__item,
+  .work-container__item {
+    padding: 1.5em;
+    min-height: 100px;
+    margin: 5px 0;
+  }
+  .skills-container__item p {
+    margin: 0;
+  }
+  .contact {
+    max-width: 300px;
+    font-size: 0.8em;
+  }
+  .attribution {
+    max-width: 300px;
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 870px) {
+  body {
+    font-size: 16px;
+  }
+  .header__title {
+    font-size: 1.8em;
+  }
+  .navigation__item {
+    font-size: 1em;
+    padding: 0.7em 0;
+    & a {
+      padding: 0.8em;
+    }
+  }
+  .title {
+    font-size: 1.4em;
+    margin-top: 3em;
+    &__name {
+      margin: 0;
+    }
+  }
+  .about-title,
+  .skills-title,
+  .work-title {
+    width: 200px;
+    font-size: 2em;
+  }
+  .about,
+  .skills,
+  .work {
+    min-width: 400px;
+    width: 600px;
+  }
+  .about-container {
+    @include gridResponsive();
+    padding: 2.5em 2.5em 0 2.5em;
+  }
+  .skills-container {
+    @include gridResponsive();
+    padding: 1em 2.5em;
+  }
+  .work-container {
+    @include gridResponsive(repeat(2, minmax(15em, 1fr)), repeat(3, minmax(10em, 1fr)), 2em);
+    padding: 2em;
+  }
+  .placeholder {
+    height: 3rem;
+  }
+  .about-container__item,
+  .skills-container__item,
+  .work-container__item {
+    padding: 2.5em;
+    min-height: 8em;
+  }
+  .about-container__item {
+    &--first {
+      grid-area: 1/1/2/2;
+    }
+    &--second {
+      grid-area: 1/2/2/3;
+    }
+    &--third {
+      grid-area: 2/1/3/3;
+    }
+    &--fourth {
+      grid-area: 4/1/5/3;
+    }
+    &--sixth {
+      grid-column-end: 3;
+    }
+  }
+  .skills-container__item {
+    &--first {
+      grid-area: 3/2/4/3;
+    }
+    &--fifth {
+      grid-area: 4/1/5/3;
+    }
+  }  
+  .work-container__item {
+    padding: 1.5em;
+  }
+  .contact {
+    max-width: 600px;
+    font-size: 0.9em;
+  }
+  .attribution {
+    max-width: 600px;
+    font-size: 0.6em;
+  }
+}
