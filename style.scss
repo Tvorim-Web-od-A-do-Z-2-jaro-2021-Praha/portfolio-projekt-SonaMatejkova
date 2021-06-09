@@ -1,20 +1,24 @@
 ///// variables
 
-$backgroundImage: url(images/background.jpg);
-$sectionBackgroundColor: #fefcec;
-$headerBackgroundColor: rgba(26, 161, 216, 0.8);
-$itemBackgroundColorLight: #fdde86;
-$itemBackgroundColorMedium: #fdd872;
-$itemBackgroundColorDark: #feb685;
-$footerBackgroundColor: rgba(0, 0, 0, 0.2);
-$mainColor: #124e74;
-$sectionTitleColor: #1aa1d8;
-$headerColor: #fefcec;
+$mainBackgroundColor: #000000;
+$sectionBackgroundColor: #222222;
+$headerBackground: linear-gradient(
+  270deg,
+  hsla(35, 83%, 59%, 1) 0%,
+  hsla(330, 90%, 49%, 1) 100%
+);
+$itemBackgroundColorLight: linear-gradient(to right, #eda441, #efb057);
+$itemBackgroundColorMedium: linear-gradient(to right, #f04a3b, #f26154);
+$itemBackgroundColorDark: linear-gradient(to right, #ec0d7d, #f42a8f);
+$footerBackgroundColor: rgba(34, 34, 34, 0.6);
+$mainColor: #000000;
+$sectionTitleColor: #ec0d7d;
+$headerColor: #ffffff;
 $contactColor: #ffffff;
 $atributionColor: rgba(255, 255, 255, 0.5);
 $fontFamilyMain: 'Montserrat', sans-serif;
 $fontFamilyTitle: 'Caveat', cursive;
-$boxShadow: 3px 4px 5px rgba(209, 206, 206, 0.7);
+$boxShadow: 3px 4px 5px rgba(34, 34, 34, 0.7);
 
 /////mixins
 
@@ -30,26 +34,24 @@ $boxShadow: 3px 4px 5px rgba(209, 206, 206, 0.7);
   margin-bottom: 2px;
   background-color: $sectionBackgroundColor;
   border-radius: 20px 20px 0 0;
-  border-top: 1px solid rgba(209, 206, 206, 0.7);
+  border-top: 1px solid rgba(0, 0, 0, 0.7);
 }
 
 @mixin sectionContainer() {
   min-height: 600px;
   background-color: $sectionBackgroundColor;
   border-radius: 20px 20px 0 0;
-  border: 1px solid rgba(209, 206, 206, 0.7);
-  box-shadow: $boxShadow;
+  border: 1px solid rgba(0, 0, 0, 0.7);
   display: grid;
-  padding: 2em 3em;
+  padding: 2.5em 3em;
   column-gap: 3em;
 }
 
 @mixin sectionContainerItem() {
-  min-height: 11em;
+  min-height: 15em;
   padding: 2.5em;
-  border-radius: 5px;
-  border: 1px solid rgba(209, 206, 206, 0.5);
-  box-shadow: $boxShadow;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
   align-self: center;
 }
 
@@ -85,15 +87,11 @@ body {
   margin: 0;
   font: {
     family: $fontFamilyMain;
-    size: 1rem;
+    size: 1.3rem;
   }
   line-height: 1.7;
   color: $mainColor;
-  background: {
-    image: $backgroundImage;
-    repeat: no-repeat;
-    size: cover;
-  }
+  background-color: $mainBackgroundColor;
 }
 
 a {
@@ -105,7 +103,7 @@ a {
   display: flex;
   justify-content: space-between;
   color: $headerColor;
-  background-color: $headerBackgroundColor;
+  background: $headerBackground;
   position: fixed;
   left: 0;
   right: 0;
@@ -145,7 +143,13 @@ a {
 
 .title {
   font-size: 1.5em;
-  color: $headerColor;
+  background: -webkit-linear-gradient(
+    135deg,
+    hsla(35, 83%, 59%, 1) 0%,
+    hsla(330, 90%, 49%, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
   margin-top: 5em;
   &__text {
@@ -183,7 +187,7 @@ h3 {
 .about,
 .skills,
 .work {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -225,13 +229,13 @@ h3 {
   gap: 2em;
   &__item {
     @include sectionContainerItem();
-    padding: 1.5em;
-    min-height: 15em;
+    padding: 1.7em;
+    min-height: 16em;
   }
   &__item img {
     max-width: 100%;
     height: auto;
-    border: 3px solid rgb(53, 52, 52);
+    border: 3px solid #000000;
     margin-bottom: 1em;
   }
   & a {
@@ -241,80 +245,80 @@ h3 {
 
 .about-container__item {
   &--first {
-    background-color: $itemBackgroundColorLight;
+    background: $itemBackgroundColorLight;
     grid-area: 1/1/3/2;
     padding: 1.5rem;
   }
   &--second {
-    background-color: $itemBackgroundColorMedium;
+    background: $itemBackgroundColorMedium;
     grid-area: 2/2/3/3;
   }
   &--third {
-    background-color: $itemBackgroundColorDark;
+    background: $itemBackgroundColorDark;
     grid-area: 1/2/2/4;
     padding: 1.5rem;
   }
   &--fourth {
-    background-color: $itemBackgroundColorLight;
+    background: $itemBackgroundColorLight;
     grid-area: 2/3/3/4;
   }
   &--fifth {
-    background-color: $itemBackgroundColorMedium;
+    background: $itemBackgroundColorMedium;
     grid-area: 3/1/4/2;
   }
   &--sixth {
-    background-color: $itemBackgroundColorDark;
+    background: $itemBackgroundColorDark;
     grid-area: 3/2/4/4;
-    padding: 1.5rem;
+    padding: 2.5rem;
   }
 }
 
 .skills-container__item {
   &--first {
-    background-color: $itemBackgroundColorLight;
+    background: $itemBackgroundColorLight;
     grid-area: 1/3/3/4;
     padding: 0.5rem;
   }
   &--second {
-    background-color: $itemBackgroundColorMedium;
+    background: $itemBackgroundColorMedium;
     grid-area: 1/1/2/3;
     padding: 1.5rem;
   }
   &--third {
-    background-color: $itemBackgroundColorDark;
+    background: $itemBackgroundColorDark;
     grid-area: 2/2/3/3;
   }
   &--fourth {
-    background-color: $itemBackgroundColorLight;
+    background: $itemBackgroundColorLight;
     grid-area: 2/1/3/2;
   }
   &--fifth {
-    background-color: $itemBackgroundColorMedium;
+    background: $itemBackgroundColorMedium;
     grid-area: 3/2/4/4;
     padding: 1.5rem;
   }
   &--sixth {
-    background-color: $itemBackgroundColorDark;
+    background: $itemBackgroundColorDark;
     grid-area: 3/1/4/2;
   }
 }
 
 .work-container__item {
   &--first {
-    background-color: $itemBackgroundColorLight;
+    background: $itemBackgroundColorLight;
     align-self: start;
   }
   &--second {
-    background-color: $itemBackgroundColorMedium;
+    background: $itemBackgroundColorMedium;
   }
   &--third {
-    background-color: $itemBackgroundColorDark;
+    background: $itemBackgroundColorDark;
     align-self: end;
   }
 }
 
 .contact {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -338,7 +342,7 @@ h3 {
 }
 
 .attribution {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0;
   font-size: 0.8em;
@@ -352,7 +356,7 @@ h3 {
 
 @media screen and (max-width: 400px) {
   body {
-    font-size: 12px;
+    font-size: 0.7rem;
   }
   .header {
     display: block;
@@ -430,7 +434,7 @@ h3 {
 
 @media screen and (min-width: 400px) and (max-width: 870px) {
   body {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .header__title {
     font-size: 1.8em;
@@ -463,11 +467,11 @@ h3 {
   }
   .about-container {
     @include gridResponsive();
-    padding: 2.5em 2.5em 0 2.5em;
+    padding: 2em 2.5em;
   }
   .skills-container {
     @include gridResponsive();
-    padding: 1.5em 2.5em;
+    padding: 2em 2.5em;
   }
   .work-container {
     @include gridResponsive(
@@ -499,11 +503,13 @@ h3 {
       padding: 1rem;
     }
     &--fourth {
-      grid-area: 4/1/5/3;
+      grid-area: 3/2/4/3;
+    }
+    &--fifth {
+      padding: 2.5rem 3rem;
     }
     &--sixth {
-      grid-column-end: 3;
-      padding: 3rem 1rem;
+      grid-area: 4/1/5/3;
     }
   }
   .skills-container__item {
